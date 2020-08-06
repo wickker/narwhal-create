@@ -12,3 +12,32 @@
   bottom: 0%;
   background: #042235;
 }
+
+.whaleIcon {
+  width: 45px;
+}
+
+.whaleIconDiv {
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.sideBarIconDiv {
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.sideBarIconDiv:hover {
+  background: #2995DA;
+  cursor: pointer;
+}
+
+.sideBarIconDiv:hover .sideBarIcon {
+  opacity: 1;
+}

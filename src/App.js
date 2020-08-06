@@ -1,11 +1,12 @@
 import React from "react";
-import "./Styles.css";
+import "./styles.css";
+import SideBar from "./components/sidebar.js";
 
 export default class App extends React.Component {
   render() {
     return (
       <div>
-        <h1 className="greeting">Hello world</h1>
+        <SideBar />
       </div>
     );
   }

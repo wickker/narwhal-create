@@ -1,0 +1,14 @@
+/* CSS reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.sideBar {
+  position: absolute;
+  left: 0%;
+  right: 94.73%;
+  top: 0%;
+  bottom: 0%;
+  background: #042235;
+}

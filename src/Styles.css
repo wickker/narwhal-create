@@ -1,0 +1,10 @@
+/* CSS reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.greeting {
+  color: blue;
+}
+

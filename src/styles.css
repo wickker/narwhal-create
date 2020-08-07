@@ -1,9 +1,104 @@
+@import '~antd/dist/antd.css';
+
 /* CSS reset */
 * {
   margin: 0;
   padding: 0;
 }
 
+/* ---------------------------
+------------------------------
+------------------------------ */
+
+/* MAIN CONTAINER */
+.mainContainer {
+  position: absolute;
+  left: 5.27%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  background: #F1F4F8;
+}
+
+/* ---------------------------
+------------------------------
+------------------------------ */
+
+/* HEADER */
+.narwhalHeader {
+  height: 80px;
+  background: white;
+  border-bottom: 1px solid #E2E2E2;
+  display: flex;
+  flex-direction: row;
+}
+
+.narwhalTitle {
+  height: 80px;
+  width: 12%;
+  font-size: 18px;
+  color: #A4A6A8;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-transform: uppercase;
+  border-right: 1px solid #E2E2E2;
+}
+
+.subHeader {
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.pageName {
+  height: 80px;
+  padding-left: 35px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 18px;
+  color: black;
+}
+
+.greeting {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 86%;
+  right: 0%;
+  /* border: solid 1px black; */
+}
+
+.avatar {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+
+.avatarDiv {
+  margin-right: 10px;
+}
+
+.helloMessage {
+  font-size: 14px;
+  color: #A4A6A8;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.notificationsIcon {
+  margin-right: 30px;
+}
+
+/* ---------------------------
+------------------------------
+------------------------------ */
+
+/* SIDE BAR */
 .sideBar {
   position: absolute;
   left: 0%;
@@ -34,7 +129,7 @@
 }
 
 .sideBarIconDiv:hover {
-  background: #2995DA;
+  background: #2995da;
   cursor: pointer;
 }
 

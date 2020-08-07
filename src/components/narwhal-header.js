@@ -2,14 +2,14 @@ import React from "react";
 import "../styles.css";
 import MailIcon from "../svg/icon-mail.svg";
 import { Badge } from "antd";
-import Data from "./raw-data.json";
+import data from "./raw-data.json";
 import CarotDownIcon from "../svg/caret down.svg";
 
 export default class NarwhalHeader extends React.Component {
   constructor() {
     super();
     this.state = {
-      currentUser: Data.current_user,
+      currentUser: data.current_user,
     };
   }
 

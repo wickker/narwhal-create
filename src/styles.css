@@ -30,12 +30,11 @@
   background: white;
   border-bottom: 1px solid #E2E2E2;
   display: flex;
-  flex-direction: row;
 }
 
 .narwhalTitle {
   height: 80px;
-  width: 12%;
+  width: 10%;
   font-size: 18px;
   color: #A4A6A8;
   font-weight: bold;
@@ -46,20 +45,12 @@
   border-right: 1px solid #E2E2E2;
 }
 
-.subHeader {
-  height: 80px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
 .pageName {
   height: 80px;
-  padding-left: 35px;
+  padding-left: 30px;
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  font-size: 18px;
+  font-size: 16px;
   color: black;
 }
 
@@ -67,10 +58,13 @@
   height: 80px;
   display: flex;
   align-items: center;
-  position: absolute;
-  left: 86%;
-  right: 0%;
-  /* border: solid 1px black; */
+  margin-right: 30px;
+}
+
+.subHeader {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .avatar {
@@ -92,6 +86,20 @@
 
 .notificationsIcon {
   margin-right: 30px;
+}
+
+/* ---------------------------
+------------------------------
+------------------------------ */
+
+/* SECOND HEADER */
+.secondSubHeader{
+  height: 90px;
+  background: white;
+  border: solid 1px black;
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* ---------------------------

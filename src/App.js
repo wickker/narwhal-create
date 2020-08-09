@@ -6,7 +6,7 @@ import MainContainer from "./components/main-container.js";
 export default class App extends React.Component {
   render() {
     return (
-      <div>
+      <div className="body">
         <SideBar />
         <MainContainer />
       </div>

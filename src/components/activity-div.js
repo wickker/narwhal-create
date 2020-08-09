@@ -6,7 +6,7 @@ export default class ActivityDiv extends React.Component {
     return (
       <div className="activityDiv">
         <div>
-          Activity
+         
         </div>
       </div>
     );

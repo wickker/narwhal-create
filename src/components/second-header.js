@@ -12,8 +12,27 @@ export default class SecondHeader extends React.Component {
     this.state = {
       allTeams: data.teams,
       filterTitle: "All",
+      filteredTeams: data.teams,
+      totalTeams: data.teams.length,
     };
   }
+
+  clickFilter = (event) => {
+    let filter = event.target.id;
+    if (filter === "All") {
+      this.setState({ filteredTeams: this.state.allTeams, filterTitle: "All" });
+    } else if (filter === "Favorites") {
+      let favoriteTeams = this.state.allTeams.filter(
+        (team) => team.is_favorited === true
+      );
+      this.setState({ filteredTeams: favoriteTeams, filterTitle: "Favorite" });
+    } else if (filter === "Archived") {
+      let archivedTeams = this.state.allTeams.filter(
+        (team) => team.is_archived === true
+      );
+      this.setState({ filteredTeams: archivedTeams, filterTitle: "Archived" });
+    }
+  };
 
   render() {
     return (
@@ -48,13 +67,25 @@ export default class SecondHeader extends React.Component {
           </div>
           <div className="thirdSubHeader">
             <div className="filterOptionsDiv">
-              <div className="filterOptions" id="All">
+              <div
+                className="filterOptions"
+                id="All"
+                onClick={this.clickFilter}
+              >
                 All
               </div>
-              <div className="filterOptions" id="Favorites">
+              <div
+                className="filterOptions"
+                id="Favorites"
+                onClick={this.clickFilter}
+              >
                 Favorites
               </div>
-              <div className="filterOptions" id="Archived">
+              <div
+                className="filterOptions"
+                id="Archived"
+                onClick={this.clickFilter}
+              >
                 Archived
               </div>
             </div>
@@ -68,7 +99,7 @@ export default class SecondHeader extends React.Component {
           </div>
         </div>
         <div className="content">
-          <InfoDiv />
+          <InfoDiv filteredTeams={this.state.filteredTeams} filterTitle={this.state.filterTitle} totalTeams={this.state.totalTeams}/>
           <ActivityDiv />
         </div>
       </div>

@@ -1,13 +1,16 @@
 import React from "react";
 import "../styles.css";
+import PlusIcon from "../svg/Shape.svg";
+import SearchIcon from "../svg/icon-search.svg";
 
 export default class SecondHeader extends React.Component {
   render() {
     return (
       <div>
         <div className="secondSubHeader">
-          <div>
+          <div className="iconAndTitle">
             <svg
+              className="secondHeaderIcon"
               width="30"
               height="34"
               viewBox="0 0 30 34"
@@ -22,9 +25,31 @@ export default class SecondHeader extends React.Component {
                 fill="#A4A6A8"
               />
             </svg>
-            <span>Teams</span>
+            <span className="secondHeaderTitle">Teams</span>
           </div>
-          <div>Test</div>
+          <div>
+            <div className="createButton">
+              <img 
+              className="plusIcon"
+              alt="Create" src={PlusIcon}/>
+              <span className="createButtonText">Create new team</span>
+            </div>
+          </div>
+        </div>
+        <div className="thirdSubHeader">
+          <div className="filterOptionsDiv">
+            <div className="filterOptions">All</div>
+            <div className="filterOptions">Favorites</div>
+            <div className="filterOptions">Archived</div>
+          </div>
+          <div>
+            <img
+            className="searchIcon" alt="Search" src={SearchIcon}/>
+            <input className="searchInput" placeholder="Search team name ..."/>
+          </div>
+        </div>
+        <div className="content">
+
         </div>
       </div>
     );

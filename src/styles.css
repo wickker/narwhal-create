@@ -1,6 +1,6 @@
-@import '~antd/dist/antd.css';
+@import "~antd/dist/antd.css";
 
-/* CSS reset */
+/* CSS RESET */
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +17,7 @@
   right: 0%;
   top: 0%;
   bottom: 0%;
-  background: #F1F4F8;
+  background: #f1f4f8;
 }
 
 /* ---------------------------
@@ -28,7 +28,7 @@
 .narwhalHeader {
   height: 80px;
   background: white;
-  border-bottom: 1px solid #E2E2E2;
+  border-bottom: 1px solid #e2e2e2;
   display: flex;
 }
 
@@ -36,13 +36,13 @@
   height: 80px;
   width: 10%;
   font-size: 18px;
-  color: #A4A6A8;
+  color: #a4a6a8;
   font-weight: bold;
   display: flex;
   justify-content: space-around;
   align-items: center;
   text-transform: uppercase;
-  border-right: 1px solid #E2E2E2;
+  border-right: 1px solid #e2e2e2;
 }
 
 .pageName {
@@ -79,7 +79,7 @@
 
 .helloMessage {
   font-size: 14px;
-  color: #A4A6A8;
+  color: #a4a6a8;
   font-weight: bold;
   margin-right: 10px;
 }
@@ -93,13 +93,90 @@
 ------------------------------ */
 
 /* SECOND HEADER */
-.secondSubHeader{
-  height: 90px;
+.secondSubHeader {
+  height: 100px;
   background: white;
-  border: solid 1px black;
-  display: flex; 
+  display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.iconAndTitle {
+  display: flex;
+  align-items: center;
+}
+
+.secondHeaderIcon {
+  margin-left: 38px;
+  margin-right: 10px;
+}
+
+.secondHeaderTitle {
+  color: #1a1919;
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.createButton {
+  background: #40D2BF;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+  padding: 10px 15px 10px 10px;
+}
+
+.plusIcon {
+  margin-right: 20px;
+}
+
+.createButtonText {
+  font-size: 14px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.thirdSubHeader {
+  height: 45px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border: solid 1px black; */
+}
+
+.filterOptionsDiv {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  margin-left: 38px;
+  justify-content: space-between;
+}
+
+.filterOptions {
+  line-height: 45px;
+  font-size: 16px;
+  color: black;
+  font-weight: bold;
+  padding: 0 15px;
+}
+
+.filterOptions:hover {
+  cursor: pointer;
+  color: #0083E3;
+  border-bottom: 3px solid #0083E3;
+}
+
+.searchIcon {
+  margin-right: 10px;
+}
+
+.searchInput {
+  border: none;
+  font-size: 15px;
+  font-weight: bold;
+  color: #a4a6a8;
+  margin-right: 30px;
 }
 
 /* ---------------------------
@@ -143,4 +220,15 @@
 
 .sideBarIconDiv:hover .sideBarIcon {
   opacity: 1;
+}
+
+/* ---------------------------
+------------------------------
+------------------------------ */
+
+/* CONTENT */
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }

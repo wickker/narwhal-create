@@ -230,5 +230,28 @@
 .content {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin: 30px 30px 0px 30px;
+}
+
+/* ---------------------------
+------------------------------
+------------------------------ */
+
+/* INFO DIV */
+.infoDiv {
+  border: solid 1px black;
+  background-color: white;
+  width: 72%;
+}
+
+/* ---------------------------
+------------------------------
+------------------------------ */
+
+/* ACTIVITY DIV */
+.activityDiv {
+  border: solid 1px black;
+  background-color: white;
+  width: 25%;
 }

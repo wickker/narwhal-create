@@ -2,6 +2,8 @@ import React from "react";
 import "../styles.css";
 import PlusIcon from "../svg/Shape.svg";
 import SearchIcon from "../svg/icon-search.svg";
+import ActivityDiv from "./activity-div.js";
+import InfoDiv from "./info-div.js";
 
 export default class SecondHeader extends React.Component {
   render() {
@@ -49,7 +51,8 @@ export default class SecondHeader extends React.Component {
           </div>
         </div>
         <div className="content">
-
+          <InfoDiv />
+          <ActivityDiv />
         </div>
       </div>
     );

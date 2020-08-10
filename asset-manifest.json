@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/narwhal-create/static/css/main.a277c33d.chunk.css",
-    "main.js": "/narwhal-create/static/js/main.1c3d4ea2.chunk.js",
-    "main.js.map": "/narwhal-create/static/js/main.1c3d4ea2.chunk.js.map",
+    "main.js": "/narwhal-create/static/js/main.2f12454f.chunk.js",
+    "main.js.map": "/narwhal-create/static/js/main.2f12454f.chunk.js.map",
     "runtime-main.js": "/narwhal-create/static/js/runtime-main.f6ca52a1.js",
     "runtime-main.js.map": "/narwhal-create/static/js/runtime-main.f6ca52a1.js.map",
     "static/css/2.9c8c8187.chunk.css": "/narwhal-create/static/css/2.9c8c8187.chunk.css",
     "static/js/2.9dfa51ec.chunk.js": "/narwhal-create/static/js/2.9dfa51ec.chunk.js",
     "static/js/2.9dfa51ec.chunk.js.map": "/narwhal-create/static/js/2.9dfa51ec.chunk.js.map",
     "index.html": "/narwhal-create/index.html",
-    "precache-manifest.197dafddab3e44996db1916c4978a8b7.js": "/narwhal-create/precache-manifest.197dafddab3e44996db1916c4978a8b7.js",
+    "precache-manifest.3136d126f57beed9a55971f756c25dcc.js": "/narwhal-create/precache-manifest.3136d126f57beed9a55971f756c25dcc.js",
     "service-worker.js": "/narwhal-create/service-worker.js",
     "static/css/2.9c8c8187.chunk.css.map": "/narwhal-create/static/css/2.9c8c8187.chunk.css.map",
     "static/css/main.a277c33d.chunk.css.map": "/narwhal-create/static/css/main.a277c33d.chunk.css.map",
@@ -29,6 +29,6 @@
     "static/css/2.9c8c8187.chunk.css",
     "static/js/2.9dfa51ec.chunk.js",
     "static/css/main.a277c33d.chunk.css",
-    "static/js/main.1c3d4ea2.chunk.js"
+    "static/js/main.2f12454f.chunk.js"
   ]
 }

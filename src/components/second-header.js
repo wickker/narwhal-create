@@ -71,6 +71,27 @@ export default class SecondHeader extends React.Component {
     }
   };
 
+  sortByName = (a, b) => {
+    let nameOne = a.name.toUpperCase();
+    let nameTwo = b.name.toUpperCase();
+    let comparison = 0;
+    if (nameOne > nameTwo) {
+      comparison = 1;
+    } else if (nameOne < nameTwo) {
+      comparison = -1;
+    }
+    return comparison;
+  };
+
+  search = (event) => {
+    let searchTerm = event.target.value;
+    let itemsFound = this.state.allTeams.filter((team) => {
+      return team.name.toUpperCase().includes(searchTerm.toUpperCase());
+    });
+    itemsFound.sort(this.sortByName);
+    this.setState({ filterTitle: "Searched", filteredTeams: itemsFound });
+  }
+
   componentDidUpdate = (prevProps) => {
     if (prevProps === this.props) return;
     this.determineIcon(this.props.navTitle);
@@ -191,6 +212,7 @@ export default class SecondHeader extends React.Component {
               <input
                 className="searchInput"
                 placeholder="Search team name ..."
+                onChange={this.search}
               />
             </div>
           </div>

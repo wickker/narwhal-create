@@ -7,11 +7,11 @@ export default class SideBar extends React.Component {
     super();
     this.state = {
       campaignColor: "",
-      teamColor: "",
+      teamColor: "#2995da",
       leadColor: "",
       reportColor: "",
       campaignOpa: "0.3",
-      teamOpa: "0.3",
+      teamOpa: "1",
       leadOpa: "0.3",
       reportOpa: "0.3",
     };

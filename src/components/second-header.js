@@ -19,23 +19,56 @@ export default class SecondHeader extends React.Component {
       hideCampaign: true,
       hideReport: true,
       hideLead: true,
+      allColor: "#0083e3",
+      allLine: "3px solid #0083e3",
+      favoriteColor: "",
+      favoriteLine: "",
+      archivedColor: "",
+      archivedLine: "",
     };
   }
 
   clickFilter = (event) => {
     let filter = event.target.id;
     if (filter === "All") {
-      this.setState({ filteredTeams: this.state.allTeams, filterTitle: "All" });
+      this.setState({
+        filteredTeams: this.state.allTeams,
+        filterTitle: "All",
+        allColor: "#0083e3",
+        allLine: "3px solid #0083e3",
+        favoriteColor: "",
+        favoriteLine: "",
+        archivedColor: "",
+        archivedLine: "",
+      });
     } else if (filter === "Favorites") {
       let favoriteTeams = this.state.allTeams.filter(
         (team) => team.is_favorited === true
       );
-      this.setState({ filteredTeams: favoriteTeams, filterTitle: "Favorite" });
+      this.setState({
+        filteredTeams: favoriteTeams,
+        filterTitle: "Favorite",
+        allColor: "",
+        allLine: "",
+        favoriteColor: "#0083e3",
+        favoriteLine: "3px solid #0083e3",
+        archivedColor: "",
+        archivedLine: "",
+      });
     } else if (filter === "Archived") {
       let archivedTeams = this.state.allTeams.filter(
         (team) => team.is_archived === true
       );
-      this.setState({ filteredTeams: archivedTeams, filterTitle: "Archived" });
+      this.setState({
+        filteredTeams: archivedTeams,
+        filterTitle: "Archived",
+        allColor: "",
+        allLine: "",
+        favoriteColor: "",
+        favoriteLine: "",
+        archivedColor: "#0083e3",
+        archivedLine: "3px solid #0083e3",
+      });
     }
   };
 
@@ -89,13 +122,22 @@ export default class SecondHeader extends React.Component {
       return team.name.toUpperCase().includes(searchTerm.toUpperCase());
     });
     itemsFound.sort(this.sortByName);
-    this.setState({ filterTitle: "Searched", filteredTeams: itemsFound });
-  }
+    this.setState({
+      filterTitle: "Searched",
+      filteredTeams: itemsFound,
+      allColor: "",
+      allLine: "",
+      favoriteColor: "",
+      favoriteLine: "",
+      archivedColor: "",
+      archivedLine: "",
+    });
+  };
 
   componentDidUpdate = (prevProps) => {
     if (prevProps === this.props) return;
     this.determineIcon(this.props.navTitle);
-  }
+  };
 
   render() {
     return (
@@ -179,7 +221,9 @@ export default class SecondHeader extends React.Component {
             <div>
               <div className="createButton">
                 <img className="plusIcon" alt="Create" src={PlusIcon} />
-                <span className="createButtonText">Create new {this.props.createNewButtonName}</span>
+                <span className="createButtonText">
+                  Create new {this.props.createNewButtonName}
+                </span>
               </div>
             </div>
           </div>
@@ -189,6 +233,10 @@ export default class SecondHeader extends React.Component {
                 className="filterOptions"
                 id="All"
                 onClick={this.clickFilter}
+                style={{
+                  color: this.state.allColor,
+                  borderBottom: this.state.allLine,
+                }}
               >
                 All
               </div>
@@ -196,6 +244,10 @@ export default class SecondHeader extends React.Component {
                 className="filterOptions"
                 id="Favorites"
                 onClick={this.clickFilter}
+                style={{
+                  color: this.state.favoriteColor,
+                  borderBottom: this.state.favoriteLine,
+                }}
               >
                 Favorites
               </div>
@@ -203,6 +255,10 @@ export default class SecondHeader extends React.Component {
                 className="filterOptions"
                 id="Archived"
                 onClick={this.clickFilter}
+                style={{
+                  color: this.state.archivedColor,
+                  borderBottom: this.state.archivedLine,
+                }}
               >
                 Archived
               </div>

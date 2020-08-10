@@ -4,10 +4,33 @@ import SideBar from "./components/sidebar.js";
 import MainContainer from "./components/main-container.js";
 
 export default class App extends React.Component {
+  constructor () {
+    super();
+    this.state = {
+      isContentHidden: false,
+      navTitle: "Teams",
+      createNewName: "Team",
+    }
+  }
+
+
+  onSideBarClick = (event) => {
+    let clicked = event.target.getAttribute("attr");
+    if (clicked === "campaign") {
+      this.setState({ isContentHidden: true, navTitle: "Campaigns", createNewName: "Campaign"});
+    } else if (clicked === "team") {
+      this.setState({ isContentHidden: false, navTitle: "Teams", createNewName: "Team"});
+    } else if (clicked === "lead") {
+      this.setState({ isContentHidden: true, navTitle: "Leads", createNewName: "Lead"});
+    } else if (clicked === "report") {
+      this.setState({ isContentHidden: true, navTitle: "Reports", createNewName: "Report"});
+    }
+  }
+
   render() {
     return (
       <div>
-        <SideBar />
+        <SideBar onSideBarClick={this.onSideBarClick} navTitle={this.state.navTitle} />
         <MainContainer />
       </div>
     );

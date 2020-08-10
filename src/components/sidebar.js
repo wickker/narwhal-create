@@ -3,24 +3,96 @@ import "../styles.css";
 import WhaleIcon from "../svg/sw-logo-white.svg";
 
 export default class SideBar extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      campaignColor: "#042235",
+      teamColor: "#042235",
+      leadColor: "#042235",
+      reportColor: "#042235",
+      campaignOpa: "0.3",
+      teamOpa: "0.3",
+      leadOpa: "0.3",
+      reportOpa: "0.3",
+    };
+  }
+
+  determineColorAndOpacity = (name) => {
+    if (name === "Campaigns") {
+      this.setState({
+        campaignColor: "#2995da",
+        teamColor: "#042235",
+        leadColor: "#042235",
+        reportColor: "#042235",
+        campaignOpa: "1",
+        teamOpa: "0.3",
+        leadOpa: "0.3",
+        reportOpa: "0.3",
+      });
+    } else if (name === "Teams") {
+      this.setState({
+        campaignColor: "#042235",
+        teamColor: "#2995da",
+        leadColor: "#042235",
+        reportColor: "#042235",
+        campaignOpa: "0.3",
+        teamOpa: "1",
+        leadOpa: "0.3",
+        reportOpa: "0.3",
+      });
+    } else if (name === "Leads") {
+      this.setState({
+        campaignColor: "#042235",
+        teamColor: "#042235",
+        leadColor: "#2995da",
+        reportColor: "#042235",
+        campaignOpa: "0.3",
+        leadOpa: "1",
+        reportOpa: "0.3",
+      });
+    } else if (name === "Reports") {
+      this.setState({
+        campaignColor: "#042235",
+        teamColor: "#042235",
+        leadColor: "#042235",
+        reportColor: "#2995da",
+        campaignOpa: "0.3",
+        leadOpa: "0.3",
+        reportOpa: "1",
+      });
+    }
+  };
+
+  componentDidUpdate = (prevProps) => {
+    if (this.props === prevProps) return;
+    this.determineColorAndOpacity(this.props.navTitle);
+  }
+
   render() {
     return (
       <div className="sideBar">
         <div className="whaleIconDiv">
           <img className="icon" src={WhaleIcon} alt="Whale" />
         </div>
-        <div className="sideBarIconDiv">
+        <div
+          className="sideBarIconDiv"
+          attr="campaign"
+          onClick={this.props.onSideBarClick}
+          style={{ backgroundColor: this.state.campaignColor }}
+        >
           <svg
             width="28"
             height="26"
             viewBox="0 0 28 26"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            attr="campaign"
           >
             <path
+              attr="campaign"
               id="icon-campaign"
               className="sideBarIcon"
-              opacity="0.3"
+              opacity={this.state.campaignOpa}
               fill-rule="evenodd"
               clip-rule="evenodd"
               d="M0.866667 0H21.6667C22.1459 0 22.5333 0.3874 22.5333 0.866667V15.6C22.5333 16.0793 22.1459 16.4667 21.6667 16.4667H12.4592L5.77027 22.3193C5.512 22.5446 5.14627 22.5949 4.84207 22.4553C4.5318 22.3149 4.33333 22.0073 4.33333 21.6667V16.4667H0.866667C0.3874 16.4667 0 16.0793 0 15.6V0.866667C0 0.3874 0.3874 0 0.866667 0ZM24.2667 6.93333H26.8667C27.3451 6.93333 27.7333 7.3216 27.7333 7.8V20.8C27.7333 21.2784 27.3451 21.6667 26.8667 21.6667H24.2667V25.1333C24.2667 25.4583 24.0855 25.7556 23.7969 25.9038C23.5023 26.0537 23.1573 26.0251 22.8965 25.8379L17.056 21.6667H9.14853L13.1109 18.2H22.5333C23.491 18.2 24.2667 17.4243 24.2667 16.4667V6.93333Z"
@@ -28,8 +100,14 @@ export default class SideBar extends React.Component {
             />
           </svg>
         </div>
-        <div className="sideBarIconDiv">
+        <div
+          className="sideBarIconDiv"
+          attr="team"
+          onClick={this.props.onSideBarClick}
+          style={{ backgroundColor: this.state.teamColor }}
+        >
           <svg
+            attr="team"
             width="30"
             height="34"
             viewBox="0 0 30 34"
@@ -37,9 +115,10 @@ export default class SideBar extends React.Component {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
+              attr="team"
               id="icon-teams"
               className="sideBarIcon"
-              opacity="0.3"
+              opacity={this.state.teamOpa}
               fill-rule="evenodd"
               clip-rule="evenodd"
               d="M28.6875 17H21.25V8.5C21.25 7.8625 20.825 7.4375 20.1875 7.4375H18.0625V5.3125C18.0625 4.675 17.6375 4.25 17 4.25H15.9375V1.0625C15.9375 0.425 15.5125 0 14.875 0C14.2375 0 13.8125 0.425 13.8125 1.0625V4.25H12.75C12.1125 4.25 11.6875 4.675 11.6875 5.3125V7.4375H9.5625C8.925 7.4375 8.5 7.8625 8.5 8.5V20.1875H1.0625C0.425 20.1875 0 20.6125 0 21.25V32.9375C0 33.575 0.425 34 1.0625 34H9.5625H12.75H17H20.1875H28.6875C29.325 34 29.75 33.575 29.75 32.9375V18.0625C29.75 17.425 29.325 17 28.6875 17ZM6.375 29.75H3.1875V27.625H6.375V29.75ZM6.375 26.5625H3.1875V24.4375H6.375V26.5625ZM10.625 29.75H7.4375V27.625H10.625V29.75ZM10.625 26.5625H7.4375V24.4375H10.625V26.5625ZM15.9375 18.0625V31.875H13.8125V21.25C13.8125 20.6125 13.3875 20.1875 12.75 20.1875H10.625V9.5625H12.75C13.3875 9.5625 13.8125 9.1375 13.8125 8.5V6.375H15.9375V8.5C15.9375 9.1375 16.3625 9.5625 17 9.5625H19.125V17H17C16.3625 17 15.9375 17.425 15.9375 18.0625ZM22.3125 29.75H19.125V27.625H22.3125V29.75ZM22.3125 26.5625H19.125V24.4375H22.3125V26.5625ZM22.3125 23.375H19.125V21.25H22.3125V23.375ZM26.5625 29.75H23.375V27.625H26.5625V29.75ZM26.5625 26.5625H23.375V24.4375H26.5625V26.5625ZM26.5625 23.375H23.375V21.25H26.5625V23.375Z"
@@ -47,8 +126,14 @@ export default class SideBar extends React.Component {
             />
           </svg>
         </div>
-        <div className="sideBarIconDiv">
+        <div
+          className="sideBarIconDiv"
+          attr="lead"
+          onClick={this.props.onSideBarClick}
+          style={{ backgroundColor: this.state.leadColor }}
+        >
           <svg
+            attr="lead"
             width="32"
             height="28"
             viewBox="0 0 32 28"
@@ -56,8 +141,9 @@ export default class SideBar extends React.Component {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
+              attr="lead"
               id="icon-leads"
-              opacity="0.3"
+              opacity={this.state.leadOpa}
               className="sideBarIcon"
               fill-rule="evenodd"
               clip-rule="evenodd"
@@ -66,9 +152,15 @@ export default class SideBar extends React.Component {
             />
           </svg>
         </div>
-        <div className="sideBarIconDiv">
+        <div
+          className="sideBarIconDiv"
+          attr="report"
+          onClick={this.props.onSideBarClick}
+          style={{ backgroundColor: this.state.reportColor }}
+        >
           <svg
             width="30"
+            attr="report"
             height="30"
             viewBox="0 0 30 30"
             fill="none"
@@ -76,7 +168,8 @@ export default class SideBar extends React.Component {
           >
             <path
               id="icon-reports"
-              opacity="0.3"
+              attr="report"
+              opacity={this.state.reportOpa}
               className="sideBarIcon"
               fill-rule="evenodd"
               clip-rule="evenodd"

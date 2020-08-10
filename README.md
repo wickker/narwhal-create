@@ -1,8 +1,8 @@
-## Preview
-<img src="https://i.imgur.com/fAkPl89.png" />
-
 ## Live Demo
 - [Narwhal App](https://wickker.github.io/narwhal-create/)
+
+## Preview
+<img src="https://i.imgur.com/fAkPl89.png" />
 
 ## Technologies Employed
 - [Create React App](https://github.com/facebook/create-react-app)

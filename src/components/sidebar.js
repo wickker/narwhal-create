@@ -6,10 +6,10 @@ export default class SideBar extends React.Component {
   constructor() {
     super();
     this.state = {
-      campaignColor: "#042235",
-      teamColor: "#042235",
-      leadColor: "#042235",
-      reportColor: "#042235",
+      campaignColor: "",
+      teamColor: "",
+      leadColor: "",
+      reportColor: "",
       campaignOpa: "0.3",
       teamOpa: "0.3",
       leadOpa: "0.3",
@@ -21,9 +21,9 @@ export default class SideBar extends React.Component {
     if (name === "Campaigns") {
       this.setState({
         campaignColor: "#2995da",
-        teamColor: "#042235",
-        leadColor: "#042235",
-        reportColor: "#042235",
+        teamColor: "",
+        leadColor: "",
+        reportColor: "",
         campaignOpa: "1",
         teamOpa: "0.3",
         leadOpa: "0.3",
@@ -31,10 +31,10 @@ export default class SideBar extends React.Component {
       });
     } else if (name === "Teams") {
       this.setState({
-        campaignColor: "#042235",
+        campaignColor: "",
         teamColor: "#2995da",
-        leadColor: "#042235",
-        reportColor: "#042235",
+        leadColor: "",
+        reportColor: "",
         campaignOpa: "0.3",
         teamOpa: "1",
         leadOpa: "0.3",
@@ -42,19 +42,19 @@ export default class SideBar extends React.Component {
       });
     } else if (name === "Leads") {
       this.setState({
-        campaignColor: "#042235",
-        teamColor: "#042235",
+        campaignColor: "",
+        teamColor: "",
         leadColor: "#2995da",
-        reportColor: "#042235",
+        reportColor: "",
         campaignOpa: "0.3",
         leadOpa: "1",
         reportOpa: "0.3",
       });
     } else if (name === "Reports") {
       this.setState({
-        campaignColor: "#042235",
-        teamColor: "#042235",
-        leadColor: "#042235",
+        campaignColor: "",
+        teamColor: "",
+        leadColor: "",
         reportColor: "#2995da",
         campaignOpa: "0.3",
         leadOpa: "0.3",

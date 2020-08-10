@@ -18,7 +18,7 @@ export default class NarwhalHeader extends React.Component {
       <div className="narwhalHeader">
         <div className="narwhalTitle">Narwhal</div>
         <div className="subHeader">
-          <div className="pageName">Teams</div>
+          <div className="pageName">{this.props.navTitle}</div>
           <div className="greeting">
             <div className="notificationsIcon">
               <Badge
@@ -36,7 +36,6 @@ export default class NarwhalHeader extends React.Component {
               <img
                 className="avatar"
                 alt="Current user avatar"
-                // src="https://via.placeholder.com/150"
                 src={this.state.currentUser.avatar}
               />
             </div>

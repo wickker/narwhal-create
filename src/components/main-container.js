@@ -7,8 +7,12 @@ export default class MainContainer extends React.Component {
   render() {
     return (
       <div className="mainContainer">
-        <NarwhalHeader />
-        <SecondHeader />
+        <NarwhalHeader navTitle={this.props.navTitle} />
+        <SecondHeader
+          navTitle={this.props.navTitle}
+          createNewButtonName={this.props.createNewButtonName}
+          isContentHidden={this.props.isContentHidden}
+        />
       </div>
     );
   }

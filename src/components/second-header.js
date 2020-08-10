@@ -15,6 +15,10 @@ export default class SecondHeader extends React.Component {
       filteredTeams: data.teams,
       totalTeams: data.teams.length,
       activity: data.activities,
+      hideTeam: false,
+      hideCampaign: true,
+      hideReport: true,
+      hideLead: true,
     };
   }
 
@@ -35,6 +39,43 @@ export default class SecondHeader extends React.Component {
     }
   };
 
+  determineIcon = (name) => {
+    if (name === "Teams") {
+      this.setState({
+        hideTeam: false,
+        hideCampaign: true,
+        hideReport: true,
+        hideLead: true,
+      });
+    } else if (name === "Campaigns") {
+      this.setState({
+        hideTeam: true,
+        hideCampaign: false,
+        hideReport: true,
+        hideLead: true,
+      });
+    } else if (name === "Leads") {
+      this.setState({
+        hideTeam: true,
+        hideCampaign: true,
+        hideReport: true,
+        hideLead: false,
+      });
+    } else if (name === "Reports") {
+      this.setState({
+        hideTeam: true,
+        hideCampaign: true,
+        hideReport: false,
+        hideLead: true,
+      });
+    }
+  };
+
+  componentDidUpdate = (prevProps) => {
+    if (prevProps === this.props) return;
+    this.determineIcon(this.props.navTitle);
+  }
+
   render() {
     return (
       <div>
@@ -48,6 +89,7 @@ export default class SecondHeader extends React.Component {
                 viewBox="0 0 30 34"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                hidden={this.state.hideTeam}
               >
                 <path
                   id="icon-teams"
@@ -57,7 +99,61 @@ export default class SecondHeader extends React.Component {
                   fill="#A4A6A8"
                 />
               </svg>
-              <span className="secondHeaderTitle">Teams</span>
+              <svg
+                className="secondHeaderIcon"
+                width="28"
+                height="26"
+                viewBox="0 0 28 26"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                hidden={this.state.hideCampaign}
+              >
+                <path
+                  id="icon-campaign"
+                  opacity="1"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M0.866667 0H21.6667C22.1459 0 22.5333 0.3874 22.5333 0.866667V15.6C22.5333 16.0793 22.1459 16.4667 21.6667 16.4667H12.4592L5.77027 22.3193C5.512 22.5446 5.14627 22.5949 4.84207 22.4553C4.5318 22.3149 4.33333 22.0073 4.33333 21.6667V16.4667H0.866667C0.3874 16.4667 0 16.0793 0 15.6V0.866667C0 0.3874 0.3874 0 0.866667 0ZM24.2667 6.93333H26.8667C27.3451 6.93333 27.7333 7.3216 27.7333 7.8V20.8C27.7333 21.2784 27.3451 21.6667 26.8667 21.6667H24.2667V25.1333C24.2667 25.4583 24.0855 25.7556 23.7969 25.9038C23.5023 26.0537 23.1573 26.0251 22.8965 25.8379L17.056 21.6667H9.14853L13.1109 18.2H22.5333C23.491 18.2 24.2667 17.4243 24.2667 16.4667V6.93333Z"
+                  fill="#A4A6A8"
+                />
+              </svg>
+              <svg
+                className="secondHeaderIcon"
+                width="32"
+                height="28"
+                viewBox="0 0 32 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                hidden={this.state.hideLead}
+              >
+                <path
+                  id="icon-leads"
+                  opacity="1"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M16 6C16 9.237 13.379 13 10 13C6.621 13 4 9.237 4 6C4 2.691 6.691 0 10 0C13.309 0 16 2.691 16 6ZM20 4H31C31.552 4 32 4.447 32 5C32 5.553 31.552 6 31 6H20C19.448 6 19 5.553 19 5C19 4.447 19.448 4 20 4ZM20 10H31C31.552 10 32 10.447 32 11C32 11.553 31.552 12 31 12H20C19.448 12 19 11.553 19 11C19 10.447 19.448 10 20 10ZM31 16H25C24.448 16 24 16.447 24 17C24 17.553 24.448 18 25 18H31C31.552 18 32 17.553 32 17C32 16.447 31.552 16 31 16ZM25 22H31C31.552 22 32 22.447 32 23C32 23.553 31.552 24 31 24H25C24.448 24 24 23.553 24 23C24 22.447 24.448 22 25 22ZM16.409 15.973C12.009 14.671 7.858 14.696 3.583 15.961C1.439 16.596 0 18.523 0 20.758V27C0 27.553 0.448 28 1 28H19C19.552 28 20 27.553 20 27V20.772C20 18.536 18.557 16.607 16.409 15.973Z"
+                  fill="#A4A6A8"
+                />
+              </svg>
+              <svg
+                className="secondHeaderIcon"
+                width="30"
+                height="30"
+                viewBox="0 0 30 30"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                hidden={this.state.hideReport}
+              >
+                <path
+                  id="icon-reports"
+                  opacity="1"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M10.2188 6.9375L6.65625 14.0625H0C0.46875 6.1875 6.9375 0 14.9062 0C22.875 0 29.3438 6.1875 29.9062 14.0625H22.5938C22.2188 14.0625 21.9375 14.3438 21.75 14.625L18.75 20.625L11.9062 6.9375C11.625 6.28125 10.5 6.28125 10.2188 6.9375ZM19.5938 23.0625L23.1562 15.9375H29.8125C29.3438 23.8125 22.875 30 14.9062 30C6.9375 30 0.46875 23.8125 0 15.9375H7.21875C7.59375 15.9375 7.875 15.75 8.0625 15.375L11.0625 9.375L17.9062 23.0625C18.0938 23.4375 18.375 23.625 18.75 23.625C19.125 23.625 19.4062 23.3438 19.5938 23.0625Z"
+                  fill="#A4A6A8"
+                />
+              </svg>
+              <span className="secondHeaderTitle">{this.props.navTitle}</span>
             </div>
             <div>
               <div className="createButton">
@@ -100,8 +196,12 @@ export default class SecondHeader extends React.Component {
           </div>
         </div>
         <div className="content">
-          <InfoDiv filteredTeams={this.state.filteredTeams} filterTitle={this.state.filterTitle} totalTeams={this.state.totalTeams}/>
-          <ActivityDiv activity={this.state.activity}/>
+          <InfoDiv
+            filteredTeams={this.state.filteredTeams}
+            filterTitle={this.state.filterTitle}
+            totalTeams={this.state.totalTeams}
+          />
+          <ActivityDiv activity={this.state.activity} />
         </div>
       </div>
     );

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/narwhal-create/precache-manifest.3136d126f57beed9a55971f756c25dcc.js"
+  "/narwhal-create/precache-manifest.286675e4ac45c2a981d3d8982b52d7cf.js"
 );
 
 self.addEventListener('message', (event) => {

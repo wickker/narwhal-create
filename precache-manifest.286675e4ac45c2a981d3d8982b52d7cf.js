@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "41cd811c2ae62b4f9c5953be525655b8",
+    "revision": "f868fc5aab32b807636f520a5cd2cc49",
     "url": "/narwhal-create/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/narwhal-create/static/css/2.9c8c8187.chunk.css"
   },
   {
-    "revision": "2c26c14377d81fd25297",
-    "url": "/narwhal-create/static/css/main.a277c33d.chunk.css"
+    "revision": "a1d3fd245e6616a5fd35",
+    "url": "/narwhal-create/static/css/main.7ea077d5.chunk.css"
   },
   {
     "revision": "c4b10c08203d08ccb481",
@@ -20,7 +20,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/narwhal-create/static/js/2.9dfa51ec.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2c26c14377d81fd25297",
+    "revision": "a1d3fd245e6616a5fd35",
     "url": "/narwhal-create/static/js/main.2f12454f.chunk.js"
   },
   {

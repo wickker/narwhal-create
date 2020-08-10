@@ -36,8 +36,8 @@ export default class NarwhalHeader extends React.Component {
               <img
                 className="avatar"
                 alt="Current user avatar"
-                src="https://via.placeholder.com/150"
-                // src={this.state.currentUser.avatar}
+                // src="https://via.placeholder.com/150"
+                src={this.state.currentUser.avatar}
               />
             </div>
             <div>

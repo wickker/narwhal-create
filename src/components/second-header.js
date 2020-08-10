@@ -14,6 +14,7 @@ export default class SecondHeader extends React.Component {
       filterTitle: "All",
       filteredTeams: data.teams,
       totalTeams: data.teams.length,
+      activity: data.activities,
     };
   }
 
@@ -100,7 +101,7 @@ export default class SecondHeader extends React.Component {
         </div>
         <div className="content">
           <InfoDiv filteredTeams={this.state.filteredTeams} filterTitle={this.state.filterTitle} totalTeams={this.state.totalTeams}/>
-          <ActivityDiv />
+          <ActivityDiv activity={this.state.activity}/>
         </div>
       </div>
     );

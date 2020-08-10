@@ -11,9 +11,6 @@
 ------------------------------ */
 
 /* MAIN CONTAINER */
-.body {
-  background: #f1f4f8;
-}
 
 .mainContainer {
   position: absolute;
@@ -133,6 +130,10 @@
   align-items: center;
   margin-right: 30px;
   padding: 10px 15px 10px 10px;
+}
+
+.createButton:hover {
+  cursor: pointer;
 }
 
 .plusIcon {
@@ -354,15 +355,48 @@
   border-bottom: 1px solid #e2e2e2;
 }
 
-
 /* ---------------------------
 ------------------------------
 ------------------------------ */
 
 /* ACTIVITY DIV */
 .activityDiv {
-  background-color: white;
+  background-color: #f1f4f8;
   width: 25%;
+}
+
+.activityDivReduced {
+  background-color: white;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.05), 0px 0px 30px rgba(0, 0, 0, 0.1);
-  flex-basis: 0;
+}
+
+.activityCard {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 15px;
+}
+
+.activityText {
+  margin: 0px 8px 2px 8px;
+}
+
+.activity {
+  font-size: 14px;
+  line-height: 17px;
+  color: #444444;
+  margin-bottom: 3px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.activityContainer {
+  padding: 30px 30px 15px 30px;
+}
+
+.hoursAgo {
+  font-size: 13px;
+  line-height: 16px;
+  color: #a4a6a8;
 }

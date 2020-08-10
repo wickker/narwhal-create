@@ -158,11 +158,11 @@ export default class SecondHeader extends React.Component {
             <div>
               <div className="createButton">
                 <img className="plusIcon" alt="Create" src={PlusIcon} />
-                <span className="createButtonText">Create new team</span>
+                <span className="createButtonText">Create new {this.props.createNewButtonName}</span>
               </div>
             </div>
           </div>
-          <div className="thirdSubHeader">
+          <div className="thirdSubHeader" hidden={this.props.isContentHidden}>
             <div className="filterOptionsDiv">
               <div
                 className="filterOptions"
@@ -195,7 +195,7 @@ export default class SecondHeader extends React.Component {
             </div>
           </div>
         </div>
-        <div className="content">
+        <div className="content" hidden={this.props.isContentHidden}>
           <InfoDiv
             filteredTeams={this.state.filteredTeams}
             filterTitle={this.state.filterTitle}

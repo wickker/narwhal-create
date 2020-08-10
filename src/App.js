@@ -19,25 +19,25 @@ export default class App extends React.Component {
       this.setState({
         isContentHidden: true,
         navTitle: "Campaigns",
-        createNewName: "Campaign",
+        createNewButtonName: "Campaign",
       });
     } else if (clicked === "team") {
       this.setState({
         isContentHidden: false,
         navTitle: "Teams",
-        createNewName: "Team",
+        createNewButtonName: "Team",
       });
     } else if (clicked === "lead") {
       this.setState({
         isContentHidden: true,
         navTitle: "Leads",
-        createNewName: "Lead",
+        createNewButtonName: "Lead",
       });
     } else if (clicked === "report") {
       this.setState({
         isContentHidden: true,
         navTitle: "Reports",
-        createNewName: "Report",
+        createNewButtonName: "Report",
       });
     }
   };
